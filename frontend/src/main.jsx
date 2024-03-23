@@ -6,6 +6,8 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import "./index.css";
+import AdminRoute from "./pages/Admin/AdminRoute.jsx";
+import UserList from "./pages/Admin/UserList.jsx";
 import Login from "./pages/Auth/Login.jsx";
 import Register from "./pages/Auth/Register.jsx";
 import Profile from "./pages/User/Profile.jsx";
@@ -20,6 +22,10 @@ const router = createBrowserRouter(
 
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+
+      <Route path="/admin" element={<AdminRoute />}>
+        <Route path="userlist" element={<UserList />} />
+      </Route>
     </Route>
   )
 );
